@@ -46,7 +46,9 @@ export class Eventos implements OnInit {
   public filterEvents(filterThis: string): any {
     filterThis = filterThis.toLowerCase();
     return this.eventos.filter(
-      (evento: any) => evento.tema.toLowerCase().indexOf(filterThis) !== -1,
+      (evento: any) =>
+        evento.tema.toLowerCase().indexOf(filterThis) !== -1 ||
+        evento.local.toLowerCase().indexOf(filterThis) !== -1
     );
   }
 
