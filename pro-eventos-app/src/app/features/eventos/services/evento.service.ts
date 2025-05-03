@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { IEvento } from "../../shared/interfaces/evento.interface";
+import { IEvento } from "../../../shared/interfaces/evento.interface";
 
 @Injectable({
   providedIn: 'root'

@@ -19,18 +19,18 @@ import { NavComponent } from "./components/template/nav/nav.component";
 
 import { DatetimeFormatPipe } from "./shared/helpers/datetime-format.pipe";
 
-import { Eventos } from "./pages/eventos/eventos";
-import { Palestrantes } from "./pages/palestrantes/palestrantes";
+import { Eventos } from "./features/eventos/views/eventos/eventos";
+import { Palestrantes } from "./features/palestrantes/views/palestrantes/palestrantes";
 import { HeaderPageComponent } from './shared/components/header-page/header-page.component';
-import { ContatosComponent } from './pages/contatos/contatos.component';
-import { PerfilComponent } from './pages/perfil/perfil.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ContatosComponent } from './features/contatos/views/contatos/contatos.component';
+import { PerfilComponent } from './features/auth/views/perfil/perfil.component';
+import { DashboardComponent } from './features/dashboard/views/dashboard/dashboard.component';
 import { RouterModule } from "@angular/router";
-import { EventoDetalheComponent } from './components/eventos/evento-detalhe/evento-detalhe.component';
-import { EventoListaComponent } from './components/eventos/evento-lista/evento-lista.component';
-import { UserComponent } from './core/auth/user/user.component';
-import { LoginComponent } from './components/auth/login/login.component';
-import { RegistrationComponent } from './components/auth/registration/registration.component';
+import { EventoDetalheComponent } from './features/eventos/components/evento-detalhe/evento-detalhe.component';
+import { EventoListaComponent } from './features/eventos/components/evento-lista/evento-lista.component';
+import { UserComponent } from './features/auth/views/user/user.component';
+import { LoginComponent } from './features/auth/components/login/login.component';
+import { RegistrationComponent } from './features/auth/components/registration/registration.component';
 
 
 @NgModule({
