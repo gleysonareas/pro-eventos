@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'pe-header-page',
@@ -8,10 +10,18 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderPageComponent implements OnInit {
 
   @Input() title: string = '';
+  @Input() subtitle: string = 'Desde 2022';
+  @Input() iconClass: string = 'fa fa-user';
+  @Input() showButton: boolean = true;
 
-  constructor() { }
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  public listar(): void {
+    this.router.navigate([`/${this.title.toLowerCase()}/lista`]);
   }
 
 }

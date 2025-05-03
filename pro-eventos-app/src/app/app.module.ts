@@ -26,6 +26,11 @@ import { ContatosComponent } from './pages/contatos/contatos.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RouterModule } from "@angular/router";
+import { EventoDetalheComponent } from './components/eventos/evento-detalhe/evento-detalhe.component';
+import { EventoListaComponent } from './components/eventos/evento-lista/evento-lista.component';
+import { UserComponent } from './core/auth/user/user.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegistrationComponent } from './components/auth/registration/registration.component';
 
 
 @NgModule({
@@ -39,6 +44,11 @@ import { RouterModule } from "@angular/router";
     ContatosComponent,
     PerfilComponent,
     DashboardComponent,
+    EventoDetalheComponent,
+    EventoListaComponent,
+    UserComponent,
+    LoginComponent,
+    RegistrationComponent,
   ],
   imports: [
     AppRoutingModule,
