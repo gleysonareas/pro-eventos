@@ -1,4 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-white shadow-sm"
+  *ngIf="showMenu()"
+>
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/inicio">Pro Eventos</a>
     <button
@@ -56,9 +59,9 @@
             >Gleyson</a
           >
           <div *dropdownMenu class="dropdown-menu">
-            <a class="dropdown-item" routerLink="usuario/perfil">Perfil</a>
+            <a class="dropdown-item" routerLink="/usuario/perfil">Perfil</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item">Sair</a>
+            <a class="dropdown-item" routerLink="/usuario/login">Sair</a>
           </div>
         </li>
       </ul>
