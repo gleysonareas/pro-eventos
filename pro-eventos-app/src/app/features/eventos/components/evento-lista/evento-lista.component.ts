@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, inject, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from "ngx-bootstrap/modal";
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from "ngx-toastr";
