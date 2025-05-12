@@ -10,6 +10,8 @@ using ProEventos.Aplication.Contratos;
 using ProEventos.Persistence;
 using ProEventos.Persistence.Contexts;
 using ProEventos.Persistence.Contratos;
+using System;
+using AutoMapper;
 
 namespace ProEventos.Api
 {
@@ -32,6 +34,8 @@ namespace ProEventos.Api
                     .AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling =
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             // Com a referencia acima adiconada � possivel dizer para o ef ignorar a possibilidade de looping.
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<IEventoService, EventoService>();
             services.AddScoped<IGeralPersistence, GeralPersistence>();
