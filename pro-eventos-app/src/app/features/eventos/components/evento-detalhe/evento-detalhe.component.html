@@ -45,6 +45,9 @@
           <label>Data e Hora</label>
           <input
             type="datetime"
+            [value]="evento.dataEvento | DateTimeFormat"
+            bsDatepicker
+            [bsConfig]="bsConfig"
             class="form-control"
             [ngClass]="{
               'is-invalid': form.dataEvento.invalid && form.dataEvento.touched
@@ -86,7 +89,7 @@
               'is-invalid': form.telefone.invalid && form.telefone.touched
             }"
             formControlName="telefone"
-            placeholder="(000) 90000-0000"
+            placeholder="(00) 00000-0000"
           />
           <div class="invalid-feedback">Telefone é obrigatório</div>
         </div>
@@ -134,7 +137,11 @@
         >
           Cancelar Alteração
         </button>
-        <button class="btn btn-success" [disabled]="!eventoForm.valid">
+        <button
+          class="btn btn-success"
+          [disabled]="!eventoForm.valid"
+          (click)="saveChanges()"
+        >
           <span class="spinner-border spinner-border-sm mr-1"></span>
           Salvar Evento
         </button>

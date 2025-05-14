@@ -21,6 +21,7 @@ export class EventoListaComponent implements OnInit {
   public widthImg: number = 120;
   public marginImg: number = 2;
   public showImage: boolean = true;
+  public eventoId!: number
 
   public get filterList(): string {
     return this._filterList;
@@ -73,13 +74,30 @@ export class EventoListaComponent implements OnInit {
     );
   }
 
-  public openModal(template: TemplateRef<any>) {
+  public openModal(event: any, template: TemplateRef<any>, eventoId: number) {
+    event.stopPropagation();
+    this.eventoId = eventoId
     this.modalRef = this.modalService.show(template, { class: 'modal-sm' });
   }
 
   public confirm(): void {
-    this.toastrService.success('Seu evento foi deletado com sucesso!', 'Deletado!')
-    this.modalRef.hide();
+    this.spinnerService.show();
+    this.eventoService.deleteEvento(this.eventoId).subscribe({
+      next: (resp: any) => {
+        this.toastrService.success('Seu evento foi deletado com sucesso!', 'Deletado!')
+      },
+      error: (err: any) => {
+        console.log(err)
+        this.toastrService.error('Houve um erro ao deletar o evento', 'Erro!')
+        this.modalRef.hide();
+        this.spinnerService.hide();
+      },
+      complete: () => {
+        this.modalRef.hide();
+        this.spinnerService.hide();
+        this.getEventos()
+      }
+    })
   }
 
   public decline(): void {
